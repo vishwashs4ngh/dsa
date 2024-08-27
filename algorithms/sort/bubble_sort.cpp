@@ -1,55 +1,63 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-int *bubblesort(int *a , int len)
+void displaylist(int A[],int n)
 {
-    int comparisons=0;
-    int swaps=0;
-    for(int i=0;i<len-1;i++)
+      
+    for(int i=0;i<n;i++)
     {
-        comparisons++;
-        int flag =0;
-        for(int j=0;j<len-1-i;j++)
+         cout<<A[i]<<" ";
+    }
+    cout<<endl;
+}
+
+int *bubblesort(int A[],int n)
+{
+    int passes=0;
+    int comparisons=0;
+    for(int i=0;i<n-1;i++)
+    {
+        passes++;
+        for(int j=0;j<n-1-i;j++)
         {
-        
-            if(a[j]>a[j+1])
+            
+            if(A[j]>A[j+1])
             {
-                int temp = a[j+1];
-                a[j+1]=a[j];
-                a[j]= temp;
-                flag=1;
-                
-                swaps++;
+                int temp = A[j+1];
+                A[j+1]=A[j];
+                A[j]=temp;
+                comparisons++;
             }
-            if(flag==0)
-            break;
+           
+
+        }
+        if(passes==0)
+        {
+            cout<<passes<<endl;
+            return A;
         }
        
 
-
     }
-     cout<<comparisons<<endl;
-     cout<<swaps<<endl;
+     cout<<"Passes: "<<passes<<endl;
+     cout<<"Comparisons : "<<comparisons<<endl;
+     cout<<"Array after sorting:"<<endl;
+    return A;
     
-return a;
-
 }
 
-void printlist(int *a,int len)
-{
-    for(int i=0;i<len;i++)
-    {
-        cout<<" "<<a[i];
-    }
-}
+ int main()
+  {
+    int N=6;
+    int A[N]={7,11,9,2,17,4};
+    // int A[N]={1,2,3,4,5,6};
 
+    cout<<"Array before sorting:"<<endl;
+    displaylist(A,N);
 
-int main()
-{
-  int n =5;
-  int a[5]={5,4,3,2,1};
- bubblesort(a,n);
-printlist(a,n);
+  
+    bubblesort(A,N);
+    displaylist(A,N);
 
- return 0;
-}
+    return 0;
+}  
