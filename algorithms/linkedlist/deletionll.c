@@ -51,11 +51,11 @@ node*delete_index(node*head,int index)
    free(q);
    return head;
 }
-
 node*delete_value(node*head,int value)
 {
    node*p=head;
-   node*q=head->next;
+   node*q
+=head->next;
    while(q->data!=value && q->next!=NULL)
    {
     p=p->next;

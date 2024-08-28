@@ -36,7 +36,7 @@ Node * insert_index(Node * head, int data, int index)
 
     Node * p = head;
     int i=0;
-    while(i!=index-1)
+    while(i!=index)
     {
         p=p->next;
         i++;
