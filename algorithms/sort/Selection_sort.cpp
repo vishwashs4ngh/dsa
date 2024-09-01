@@ -1,27 +1,48 @@
 #include<iostream>
 using namespace std;
 
-int * selectionsort(int *a,int len)
+int selectionsort(int *A,int n)
 {
-    int min=a[0];
-    for(int i=0;i<len-1;i++)
+    for(int i=0;i<n-1;i++)
     {
-       
-       if(min>a[i])
-       {
-          a[0]=a[i];
-       }
-    }
-    for(int i=1;i<len-1;i++)
-    {
-        for(int j=1;j<len-1;j++)
+        int minIndex=i;
+        for(int j=i+1;j<n;j++)
         {
-             
+            if(A[minIndex]>A[j])
+            minIndex=j;
         }
+        int temp=A[i];
+        A[i]=A[minIndex];
+        A[minIndex]=temp;
+
+
     }
+    return *A;
+    
+
+
+
 }
+void display(int *A, int n){
+    
+    for(int i=0;i<n;i++)
+    {
+         printf("%d  ",A[i]);
+     }
+     printf("\n");
+   
+}
+
 
 int main()
 {
+    int A[]={3,5,2,13,12};
+    int n=5;
+printf("Array before swaping:\n");
+    display(A,n);
+    selectionsort(A,n);
+    printf("Array after swaping:\n");
+    display(A,n);
 
+    return 0;
 }

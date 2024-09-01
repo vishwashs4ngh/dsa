@@ -13,11 +13,11 @@ void displaylist(int A[],int n)
 
 int *bubblesort(int A[],int n)
 {
-    int passes=0;
-    int comparisons=0;
+    // int passes=0;
+    // int comparisons=0;
     for(int i=0;i<n-1;i++)
     {
-        passes++;
+        // passes++;
         for(int j=0;j<n-1-i;j++)
         {
             
@@ -26,21 +26,22 @@ int *bubblesort(int A[],int n)
                 int temp = A[j+1];
                 A[j+1]=A[j];
                 A[j]=temp;
-                comparisons++;
+                // comparisons++;
             }
            
 
         }
-        if(passes==0)
-        {
-            cout<<passes<<endl;
-            return A;
-        }
+        // if(passes==0)
+        // {
+        //     cout<<passes<<endl;
+        //     cout<<"Array after sorting:"<<endl;
+        //     return A;
+        // }
        
 
     }
-     cout<<"Passes: "<<passes<<endl;
-     cout<<"Comparisons : "<<comparisons<<endl;
+    //  cout<<"Passes: "<<passes<<endl;
+    //  cout<<"Comparisons : "<<comparisons<<endl;
      cout<<"Array after sorting:"<<endl;
     return A;
     
@@ -48,16 +49,16 @@ int *bubblesort(int A[],int n)
 
  int main()
   {
-    int N=6;
-    int A[N]={7,11,9,2,17,4};
+    // int N=6;
+    int A[]={7,11,9,2,17,4};
     // int A[N]={1,2,3,4,5,6};
 
     cout<<"Array before sorting:"<<endl;
-    displaylist(A,N);
+    displaylist(A,6);
 
   
-    bubblesort(A,N);
-    displaylist(A,N);
+    bubblesort(A,6);
+    displaylist(A,6);
 
     return 0;
 }  
